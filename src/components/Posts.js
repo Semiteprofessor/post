@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import axios from 'axios';
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+// import axios from 'axios';
+import { connect } from 'react-redux';
 
 class Posts extends Component {
     // state = {
@@ -18,11 +18,10 @@ class Posts extends Component {
         
     // }
 
-    handleClick = (e) => {
-        let post = this.props.post.filter( post => {
-            
-        })
-    } 
+    // handleClick = (e) => {
+    //     this.props.deletePost(this.props.post.id);
+    // }
+
   render() { 
     const post = this.props.post ? (
         <div className="post">
@@ -43,7 +42,7 @@ class Posts extends Component {
     )
     return (
       <div className="container home">
-          <h4>{post}</h4>
+          {post}
       </div>
     )
   }

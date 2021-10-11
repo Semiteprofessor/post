@@ -51,7 +51,8 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
+
+const mapStateToProps = (state) => {
     return {
         posts: state.posts
     }
