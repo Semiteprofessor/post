@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 // import axios from 'axios';
 import { connect } from 'react-redux';
+import deletePost from '../actions/postActions';
 
-class Posts extends Component {
+class Post extends Component {
     // state = {
     //     post: null
     // }
@@ -18,9 +19,10 @@ class Posts extends Component {
         
     // }
 
-    // handleClick = (e) => {
-    //     this.props.deletePost(this.props.post.id);
-    // }
+    handleClick = (e) => {
+        this.props.deletePost(this.props.post.id);
+        this.props.history.push('/')
+    }
 
   render() { 
     const post = this.props.post ? (
@@ -57,10 +59,10 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        deletePost: (id) => { dispatch({ type: 'DELETE_POST', id: id })}
+        deletePost: (id) => { dispatch(deletePost(id))}
     }
 }
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps) (Posts)
+export default connect(mapStateToProps, mapDispatchToProps) (Post)
